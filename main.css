@@ -1,0 +1,309 @@
+/* ==============================
+   GLOBAL RESET 
+   ==============================*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 
+    Change button default styles
+*/
+
+.btn {
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--white-defualt);
+}
+
+/* ==============================
+   ROOT PROJECT VARIABLES 
+   ==============================*/
+
+:root {
+    /* Colors */
+    --moonstone-blue: #68B1C8;
+    --rich-black: #000408;
+    --charlestone-green: #262C31;
+    --roman-silver: #838D9B;
+    --white-defualt: #FFFFFF;
+    --light-silver: #D9D9D9;
+
+    /* Backgrounds */
+    --body-background-color: #000;
+
+    /* Font sizes */
+    --m-section-title-size: 2rem;
+    --td-main-title-size: 4.5rem;
+
+    /* Paddings */
+    --m-section-padding: 50px 24px;
+    --m-alt-section-padding: 15px 24px;
+    --global-horizontal-padding: 0 24px;
+
+}
+
+/* ==============================
+   FONTS AND TYPOGRAPHY 
+   ==============================*/
+
+@font-face {
+    font-family: Manrope;
+    src: url('./fonts/manrope.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==============================
+   BODY SETTINGS 
+   ==============================*/
+body {
+    font-family: Manrope;
+    color: var(--white-defualt);
+    background-color: var(--body-background-color);
+}
+
+/* ==============================
+   HEADINGS AND SUBHEADINGS 
+   ==============================*/
+
+/* HERO title */
+.hero-title {
+    font-size: var(--m-section-title-size);
+    font-weight: bold;
+}
+
+/* ==============================
+   FLEX RECYCLING 
+   ==============================*/
+.flx-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flx-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flx-row-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==============================
+   SECTION SETTINGS 
+   ==============================*/
+
+.section {
+    padding: var(--global-horizontal-padding); /* 0 24px */
+}
+
+
+/* ==================================================
+   LANDING PAGE MOBILE FIRST DESIGN
+   ==================================================*/
+
+/* ==============================
+   NAVBAR
+   ==============================*/
+
+.navbar {
+    background-color: var(--body-background-color);
+    padding: 24px 15px;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    cursor: pointer;
+    max-width: 100%;
+    min-width: 188px;
+    margin-right: 70px;
+}
+
+.navbar__items {
+    display: none;
+    list-style: none;
+    color: var(--white-defualt);
+}
+
+.navbar__items--item {
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.navbar__items--item .item__link {
+    color: var(--white-defualt);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar__items--item .item__link:not(.item__link--active):hover {
+    color: var(--moonstone-blue);
+}
+
+.item__link--active {
+    font-weight: bold;
+}
+
+.navbar__tablet--menu {
+    display: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar__tablet--menu:hover {
+    color: var(--moonstone-blue);
+}
+
+.navbar__cta {
+    display: none;
+    color: var(--moonstone-blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar__hamburger-menu {
+    cursor: pointer;
+    color: var(--white-defualt);
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+}
+
+/* ==============================
+   RESPONSIVE: Tablet (Small) 
+   ==============================*/
+
+@media(min-width: 744px) {
+    /* Tablet (small) styles */
+    /* HERO title */
+    .hero-title {
+        font-size: var(--td-main-title-size);
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 24px 15px;
+    }
+
+    .navbar__tablet--menu {
+        display: revert;
+    }
+
+    .navbar__cta {
+        display: revert;
+    }
+
+    .navbar__hamburger-menu {
+        display: none;
+    }
+}
+
+/* ==============================
+   RESPONSIVE: Tablet 
+   ==============================*/
+
+@media(min-width: 1024px) {
+    /* Tablet (medium) styles */
+
+    /* Section horizontal padding settings */
+    .section {
+        padding: 0 32px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 50px 32px;
+    }
+    .navbar__items {
+        display: flex;
+        gap: 24px;
+    }
+
+    .navbar__tablet--menu {
+        display: none;
+    }
+    
+}
+
+
+/* ==============================
+   RESPONSIVE: Desktop 
+   ==============================*/
+
+@media(min-width: 1440px) {
+    /* Desktop styles */
+
+    /* Section horizontal padding settings */
+    .section {
+        padding: 0 150px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+    .navbar__items {
+        gap: 32px;
+    }
+
+}
