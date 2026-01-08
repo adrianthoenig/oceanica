@@ -9,34 +9,104 @@
     <link rel="stylesheet" href="main.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
+
 <body>
-    <header class="navbar flx-row">
-        <!-- Navbar logo -->
-        <img class="navbar__logo" src="./img/brand/logo.svg" alt="Website Oceanica Logo" />
+    <div class="background-wrapper">
+        <header class="navbar flx-row">
+            <!-- Navbar logo -->
+            <img
+                class="navbar__logo"
+                src="./img/brand/logo.svg"
+                alt="Website Oceanica Logo"
+            />
 
-        <!-- Navbar options -->
-        <ul class="navbar__items">
-            <li class="navbar__items--item"><a class="item__link item__link--active" href="#">Home</a></li>
-            <li class="navbar__items--item"><a class="item__link" href="#">Tours</a></li>
-            <li class="navbar__items--item"><a class="item__link" href="#">Contact</a></li>
-        </ul>
+            <!-- Navbar options -->
+            <ul class="navbar__items">
+                <li class="navbar__items--item">
+                    <a class="item__link item__link--active" href="#">Home</a>
+                </li>
+                <li class="navbar__items--item">
+                    <a class="item__link" href="#">Tours</a>
+                </li>
+                <li class="navbar__items--item">
+                    <a class="item__link" href="#">Contact</a>
+                </li>
+            </ul>
 
-        <!-- SMALL TABLET: MENU -->
-        <button class="btn navbar__tablet--menu">
-            Menu
-        </button>
+            <!-- SMALL TABLET: MENU -->
+            <button class="btn navbar__tablet--menu">
+                Menu
+            </button>
 
-        <!-- Start a journey (CTA) -->
-        <button class="btn navbar__cta">
-            Start a Journey
-        </button>
+            <!-- Start a journey (CTA) -->
+            <button class="btn navbar__cta">
+                Start a Journey
+            </button>
 
-        <!-- MOBILE: Hamburger icon -->
-        <button class="navbar__hamburger-menu flx-row-centered">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
+            <!-- MOBILE: Hamburger icon -->
+            <button class="navbar__hamburger-menu flx-row-centered">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- HERO -->
+        <main class="section hero flx-col-center">
+            <div class="hero-container flx-col-center">
+                <div class="hero-content flx-col-center">
+                    <h1 class="hero__title">
+                        Discover the water
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        From pristine waters to majestic forests...we have it all
+                    </p>
+
+                    <button class="btn hero__cta">
+                        Start Your Journey Today
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-cards flx-col-center">
+                <!-- Hero card -->
+                <div class="hero-cards__card flx-col-center">
+                    <h2 class="hero__card--title">
+                        Saltwater Fishing
+                    </h2>
+                    <p class="hero__card--para">
+                        Love fishing? With some of the best spots available year-round, from coastline to the deep sea, you won’t be short for choice.
+                    </p>
+                </div>
+
+                <!-- Hero card -->
+                <div class="hero-cards__card flx-col-center">
+                    <h2 class="hero__card--title">
+                        Marine Snorkelling
+                    </h2>
+                    <p class="hero__card--para">
+                        Go deep sea diving in some of the most pristine waters on the planet, from Costa Rica and the Canary Islands to Hawaii and Thailand.
+                    </p>
+                </div>
+
+                <!-- Hero card -->
+                <div class="hero-cards__card flx-col-center">
+                    <h2 class="hero__card--title">
+                        All-Day Parasailing
+                    </h2>
+                    <p class="hero__card--para">
+                        Glide through the wide open, fresh air overlooking gorgeous open bodies of ocean water to sun-swept vistas and woodland hills.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

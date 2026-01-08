@@ -76,6 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 :root {
     /* Colors */
     --moonstone-blue: #68B1C8;
+    --moonstone-blue-hover: #8FD3E6;
+
     --rich-black: #000408;
     --charlestone-green: #262C31;
     --roman-silver: #838D9B;
@@ -117,16 +119,6 @@ body {
 }
 
 /* ==============================
-   HEADINGS AND SUBHEADINGS 
-   ==============================*/
-
-/* HERO title */
-.hero-title {
-    font-size: var(--m-section-title-size);
-    font-weight: bold;
-}
-
-/* ==============================
    FLEX RECYCLING 
    ==============================*/
 .flx-col-center {
@@ -161,11 +153,21 @@ body {
    ==================================================*/
 
 /* ==============================
+   BACKGROUND WRAPPER
+   ==============================*/
+
+.background-wrapper {
+    background-image: url('./img/backgrounds/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==============================
    NAVBAR
    ==============================*/
 
 .navbar {
-    background-color: var(--body-background-color);
     padding: 24px 15px;
     justify-content: space-between;
 }
@@ -217,6 +219,11 @@ body {
     color: var(--moonstone-blue);
     font-weight: bold;
     font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar__cta:hover {
+    color: var(--moonstone-blue-hover);
 }
 
 .navbar__hamburger-menu {
@@ -229,17 +236,75 @@ body {
 }
 
 /* ==============================
+   HERO 
+   ==============================*/
+
+.hero {
+    padding: 50px 0;
+}
+
+.hero-container {
+    padding: 15px 24px;
+}
+
+.hero-content {
+    gap: 35px;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: var(--m-section-title-size);
+    font-weight: bold;
+}
+
+.hero__subtitle {
+    font-size: 1.5rem;
+    max-width: 327px;
+}
+
+.hero__cta {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--moonstone-blue);
+    background-color: #000;
+    padding: 12px 15px;
+    border-radius: 16px;
+    border: 2px solid var(--moonstone-blue);
+    transition: color 0.3s ease-in-out;
+}
+
+.hero__cta:hover {
+    color: var(--moonstone-blue-hover);
+}
+
+.hero-cards {
+    backdrop-filter: blur(20px);
+    padding: 15px 24px;
+    text-align: center;
+    gap: 30px;
+}
+
+.hero-cards__card {
+    padding: 0 15px;
+    gap: 24px;
+}
+
+.hero__card--title {
+    font-size: var(--m-section-title-size);
+}
+
+.hero__card--para {
+    font-size: 1.125rem;
+}
+
+/* ==============================
    RESPONSIVE: Tablet (Small) 
    ==============================*/
 
 @media(min-width: 744px) {
     /* Tablet (small) styles */
-    /* HERO title */
-    .hero-title {
-        font-size: var(--td-main-title-size);
-    }
 
-    /* Navbar */
+    /* NAVBAR */
     .navbar {
         padding: 24px 15px;
     }
@@ -255,6 +320,33 @@ body {
     .navbar__hamburger-menu {
         display: none;
     }
+
+    /* HERO */
+    .hero {
+        padding: 10px 0;
+    }
+    
+    .hero-content {
+        padding: 30px 24px;
+    }
+
+    .hero__title {
+        font-size: var(--td-main-title-size);
+    }
+
+    .hero__subtitle {
+        font-size: 2rem;
+        max-width: 100%;
+    }
+
+    .hero__cta {
+        font-size: 2rem;
+    }
+
+    .hero__cards {
+        padding: 25px 24px;
+        max-width: 630px;
+    }
 }
 
 /* ==============================
@@ -269,7 +361,7 @@ body {
         padding: 0 32px;
     }
 
-    /* Navbar */
+    /* NAVBAR */
     .navbar {
         padding: 50px 32px;
     }
@@ -281,6 +373,40 @@ body {
     .navbar__tablet--menu {
         display: none;
     }
+
+    /* HERO */
+    .hero {
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero-container {
+        padding: 0 70px 0 32px;
+    }
+
+    .hero-content {
+        padding: 0;
+        text-align: left;
+    }
+
+    .hero__subtitle {
+        max-width: 100%;
+    }
+
+    .hero__cards {
+        padding: 0 52px;
+        align-items: flex-start;
+    }
+
+    .hero-cards__card {
+        align-items: flex-start;
+    }
+
+    .hero__card--title,
+    .hero__card--para {
+        text-align: left;
+    }
     
 }
 
@@ -289,7 +415,7 @@ body {
    RESPONSIVE: Desktop 
    ==============================*/
 
-@media(min-width: 1440px) {
+@media(min-width: 1100px) {
     /* Desktop styles */
 
     /* Section horizontal padding settings */
@@ -297,13 +423,30 @@ body {
         padding: 0 150px;
     }
 
-    /* Navbar */
+    /* NAVBAR */
     .navbar {
         padding-left: 150px;
         padding-right: 150px;
     }
     .navbar__items {
         gap: 32px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 10px 125px 42px 150px;
+    }
+
+    .hero-container {
+        align-items: center;
+    }
+
+    .hero__cta {
+        font-size: 1.5rem;
+    }
+
+    .hero__cards {
+        padding: 50px 40px;
     }
 
 }
